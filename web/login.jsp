@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.ResultSet"%>
@@ -19,14 +20,16 @@
     <body>
         <%
 
-            String consultaSenha= request.getParameter("password");;
-            
+            String consultaSenha= request.getParameter("password");
+            String consultaNome= request.getParameter("username");
+          
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula", "root", "");
                 
                 //String sqlConsulta = "select * from cliente where nome=";
-                 String sqlConsulta = "SELECT * FROM cliente WHERE senha LIKE '%"+consultaSenha+"%'"; 
+                 String sqlConsulta = "SELECT * FROM cliente WHERE senha LIKE '%"+consultaSenha+"%' and nome LIKE '%"+consultaNome+"%'"; 
+                
                 //String sqlConsulta = "SELECT idTeste, Nome FROM teste WHERE Nome = 'Marcos'";
                 
                 PreparedStatement stmt2 = conexao.prepareStatement(sqlConsulta);
@@ -34,16 +37,17 @@
                 
                 while (rs.next()) {
                     //int bdid = rs.getInt("idCli");
-                    //String bdnm = rs.getString("nome");                    
+                    String nnome = rs.getString("nome");                    
                     String ssenha = rs.getString("senha");                    
                     
                     
                     //out.println("Id: " + bdid+ "<p></p>");
-                   // out.println("Nome: " + bdnm + "<p></p>");                    
-                    out.println("Senha: " + ssenha + "<p></p>");                    
+                    out.println("Nome: " + nnome + "<p></p>");                    
+                    out.println("Senha: " + ssenha + "<p></p>"); 
+                    
                    // out.println("-----------------------------------------------<br>");
                 }                
-            } catch (Exception e) {
+            } catch (SQLException e) {
                 out.println("Erro ao selecionar dados " + e);
             }
         %>
