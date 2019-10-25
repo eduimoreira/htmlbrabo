@@ -3,6 +3,7 @@
     Created on : 23/10/2019, 20:49:50
     Author     : Aluno
 --%>
+<%@page import="javax.swing.JOptionPane"%>
 <%@page import="cadastro.Cadastro"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.util.List"%>
@@ -29,12 +30,22 @@
              String nome = request.getParameter("usernamesignup");
              String email = request.getParameter("emailsignup");
              String senha = request.getParameter("passwordsignup");
-
-            Cadastro c = new Cadastro();
-            
+             String senha_confirm = request.getParameter("passwordsignup_confirm");
+             Cadastro c = new Cadastro();
+             if(senha.equals(senha_confirm)){
+             
             c.setjNome(nome);
             c.setjEmail(email);
             c.setjSenha(senha);
+             
+             }else{JOptionPane.showMessageDialog(null,"Senhas não coincidem"); 
+                    response.sendRedirect("index.html");
+             
+             }
+                   
+           
+            
+           
             
             try {
 //Conexão com Banco de dados
