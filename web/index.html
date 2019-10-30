@@ -11,8 +11,29 @@ primary key(id)
 );
 
 select * from Cliente; -->
+ 
 
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--  // <style>
+                    .control--radio &
+                        left 3px
+                        top 3px
+                        height 2px
+                        width 2px
+                        border-radius 50%
+                        background $color--white
+                        
+                        
+                     
+      
+      
+      
+      
+               // </style>
+
+
+
+
+[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
@@ -29,6 +50,8 @@ select * from Cliente; -->
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+                
+             
     </head>
     <body>
         <div class="container">
@@ -95,6 +118,16 @@ select * from Cliente; -->
                                 <p> 
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Por favor confirm sua senha </label>
                                     <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="Digite sua senha novamente"/>
+                                </p>
+                                        <label class="control control--radio"  >Professor
+                                          <input style="width:15px" type="radio" name="radio" checked="checked"/>
+                                          <div class="control__indicator"></div>
+                                        </label>
+                                        <label class="control control--radio"  >Aluno         
+                                          <input style="width:15px" type="radio" name="radio"/>
+                                          <div class="control__indicator"></div>
+                                        </label>
+                                    
                              
                                         
                                       <p class="signin button"> 
