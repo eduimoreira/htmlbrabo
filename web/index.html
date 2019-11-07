@@ -2,15 +2,17 @@
  <!-- create database aula;
 use aula;
 
-create table Cliente(
+create table aluno(
 id int not null auto_increment,
 nome varchar (85) not null,
 email varchar (85) not null,
 senha varchar(20) not null,
 primary key(id)
 );
+ 
 
-select * from Cliente; -->
+
+select * from aluno; -->
  
 
 <!--  // <style>
@@ -49,7 +51,7 @@ select * from Cliente; -->
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate-custom.css" />
                 
              
     </head>
@@ -78,7 +80,7 @@ select * from Cliente; -->
                     <div id="wrapper">
                         <div id="login" class="animate form">
                             <form  action="login.jsp" method="post"> 
-                                <h1>Log in</h1> 
+                                <h1>Login</h1> 
                                 <p> 
                                     <label for="username" class="uname" data-icon="u" > Seu email ou nome de usuario </label>
                                     <input id="username" name="username" required="required" type="text" placeholder="Meu nome ou meuemail@mail.com"/>
@@ -119,14 +121,11 @@ select * from Cliente; -->
                                     <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Por favor confirm sua senha </label>
                                     <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="Digite sua senha novamente"/>
                                 </p>
-                                        <label class="control control--radio"  >Professor
-                                          <input style="width:15px" type="radio" name="radio" checked="checked"/>
-                                          
-                                        </label>
-                                        <label class="control control--radio"  >Aluno         
-                                          <input style="width:15px" type="radio" name="radio"/>
-                                          
-                                        </label>
+                                <p> 
+                                    <label for="passwordsignup_confirm" class="uname" data-icon="p">Matricu </label>
+                                    <input id="usernamesignup" name="matricula" required="required" type="number" />
+                                </p>
+                                      
                                     
                              
                                         
