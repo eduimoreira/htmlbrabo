@@ -28,7 +28,7 @@
                 Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula", "root", "");
                 
                 //String sqlConsulta = "select * from cliente where nome=";
-                 String sqlConsulta = "SELECT * FROM cliente WHERE senha LIKE '%"+consultaSenha+"%' and nome LIKE '%"+consultaNome+"%'"; 
+                 String sqlConsulta = "SELECT * FROM aluno WHERE senha LIKE '%"+consultaSenha+"%' and nome LIKE '%"+consultaNome+"%'"; 
                 
                 //String sqlConsulta = "SELECT idTeste, Nome FROM teste WHERE Nome = 'Marcos'";
                 
@@ -42,8 +42,10 @@
                     
                     
                     //out.println("Id: " + bdid+ "<p></p>");
-                    out.println("Nome: " + nnome + "<p></p>");                    
-                    out.println("Senha: " + ssenha + "<p></p>"); 
+                    //out.println("Nome: " + nnome + "<p></p>");                    
+                    //out.println("Senha: " + ssenha + "<p></p>");
+                    
+                    response.sendRedirect("boletim.html");
                     
                    // out.println("-----------------------------------------------<br>");
                 }                

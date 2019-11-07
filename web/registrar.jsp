@@ -31,6 +31,7 @@
              String email = request.getParameter("emailsignup");
              String senha = request.getParameter("passwordsignup");
              String senha_confirm = request.getParameter("passwordsignup_confirm");
+            
              Cadastro c = new Cadastro();
              if(senha.equals(senha_confirm)){
              
@@ -53,7 +54,7 @@
                 Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula", "root", "");
 
 // cria um preparedStatement
-                String sql = "insert into cliente (nome,email,senha) values (?,?,?)";
+                String sql = "insert into aluno (nome,email,senha) values (?,?,?)";
 
                 PreparedStatement stmt = conexao.prepareStatement(sql);
 
