@@ -45,7 +45,7 @@
                     //out.println("Nome: " + nnome + "<p></p>");                    
                     //out.println("Senha: " + ssenha + "<p></p>");
                     
-                    response.sendRedirect("boletim.html");
+                    response.sendRedirect("CRUD.html");
                     
                    // out.println("-----------------------------------------------<br>");
                 }                

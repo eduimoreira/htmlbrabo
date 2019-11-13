@@ -66,8 +66,10 @@
 // executa
                 stmt.execute();
                 stmt.close();
+                JOptionPane.showMessageDialog(null,"Registrado com sucesso!!!!!! PORRA");
                 out.println("Gravado com suCELSO!");
                 conexao.close();
+                
                  response.sendRedirect("index.html"); 
             } catch (SQLException e) {
                 out.println("Erro " + e);
