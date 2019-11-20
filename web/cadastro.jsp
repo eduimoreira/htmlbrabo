@@ -1,3 +1,8 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +25,7 @@
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-6">
-						<h2>LanÃ§amento <b>Notas</b></h2>
+						<h2>Lançamento <b>Notas</b></h2>
 					</div>
 					<div class="col-sm-6">
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Adicionar</span></a>
@@ -31,12 +36,13 @@
             <table class="table table-striped table-hover">
                 <thead>
                     <tr>
+                          
 					
                         <th>Materia</th>
-                        <th>1Â°Unidade</th>
-			<th>2Â°Unidade</th>
-                        <th>3Â°Unidade</th>
-                        <th>4Â°Unidade</th>
+                        <th>1°Unidade</th>
+			<th>2°Unidade</th>
+                        <th>3°Unidade</th>
+                        <th>4°Unidade</th>
                           <th>Resultado</th>
                          <th>Editar</th>
                     </tr>
@@ -44,8 +50,8 @@
                 <tbody>
                     <tr>
 				
-                        <td>Matematic</td>
-                        <td>2</td>
+                        <td>Matematica</td>
+                        <td>1</td>
 			<td>3</td>
                         <td>4</td>
                        <td>5</td>
@@ -60,8 +66,8 @@
                     </tr>
                     <tr>
 					
-                       <td>Quimca</td>
-                        <td>2</td>
+                       <td>Quimica</td>
+                        <td></td>
 			<td>3</td>
                         <td>4</td>
                        <td>5</td>
@@ -77,7 +83,7 @@
                     </tr>
 					<tr>
 				
-                        <td>Fisic</td>
+                        <td>Fisica</td>
                         <td>2</td>
                        <td>3</td>
                        <td>4</td>
@@ -94,7 +100,7 @@
                     </tr>
                     <tr>
                         
-                        <td>Biologic</td>
+                        <td>Biologia</td>
                         <td>2</td>
 			<td>3</td>
                         <td>4</td>
@@ -111,7 +117,7 @@
                     </tr>					
 					<tr>
 						
-                        <td>Geografic</td>
+                        <td>Geografia</td>
                         <td>2</td>
 			<td>3</td>
                         <td>4</td>
@@ -130,7 +136,7 @@
             </table>
 			<div class="clearfix">
                     <ul class="pagination">
-                    <li >Aluno Fedido </a></li>
+                    <li >ALUNO </a></li>
                    
                 </ul>
             </div>
@@ -154,22 +160,22 @@
                                                         <label>Materia</label>
 							<input type="text" class="form-control" required>
 
-							<label>1Â°Unidade</label>
+							<label>1°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                  
-							<label>2Â°Unidade</label>
+							<label>2°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                 
                                                 
-							<label>3Â°Unidade</label>
+							<label>3°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                 
                                                 
                                                  
-							<label>4Â°Unidade</label>
+							<label>4°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                  
@@ -207,22 +213,22 @@
 					
 						
                                                 
-							<label>1Â°Unidade</label>
+							<label>1°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                  
-							<label>2Â°Unidade</label>
+							<label>2°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                 
                                                 
-							<label>3Â°Unidade</label>
+							<label>3°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                 
                                                 
                                                  
-							<label>4Â°Unidade</label>
+							<label>4°Unidade</label>
 							<input type="text" class="form-control" required>
 						
                                                  
@@ -253,7 +259,7 @@
 					</div>
 					<div class="modal-body">					
 						<p>Tem certeza de que deseja excluir esses registros?</p>
-						<p class="text-warning"><small>Esta aÃ§Ã£o nÃ£o pode ser desfeita.</small></p>
+						<p class="text-warning"><small>Esta ação não pode ser desfeita.</small></p>
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

@@ -1,10 +1,8 @@
 <%-- 
-    Document   : listarDados
-    Created on : 02/08/2019, 16:16:46
+    Document   : newjsp
+    Created on : 20/11/2019, 20:56:18
     Author     : Aluno
 --%>
-
-
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
@@ -18,17 +16,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%
-
-            String consultaSenha= request.getParameter("password");
-            String consultaNome= request.getParameter("username");
-          
-            try {
+                        <%
+                            try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/aula", "root", "");
                 
                 //String sqlConsulta = "select * from cliente where nome=";
-                 String sqlConsulta = "SELECT * FROM aluno WHERE senha LIKE '%"+consultaSenha+"%' and nome LIKE '%"+consultaNome+"%'"; 
+                 String sqlConsulta = "SELECT * FROM aluno"; 
                 
                 //String sqlConsulta = "SELECT idTeste, Nome FROM teste WHERE Nome = 'Marcos'";
                 
@@ -36,20 +30,11 @@
                 ResultSet rs = stmt2.executeQuery();
                 
                 while (rs.next()) {
-                    //int bdid = rs.getInt("idCli");
-                    String nnome = rs.getString("nome");                    
-                    String ssenha = rs.getString("senha");                    
+                    %>   <option value = "<% out.println(rs.getString("nome"));%>"> <% out.println(rs.getString("nome")); %> </option> <%
                     
-                    
-                    //out.println("Id: " + bdid+ "<p></p>");
-                    //out.println("Nome: " + nnome + "<p></p>");                    
-                    //out.println("Senha: " + ssenha + "<p></p>");
-                    
-                    response.sendRedirect("cadastro.jsp");
-                    
-                   // out.println("-----------------------------------------------<br>");
-                }                
-            } catch (SQLException e) {
+                   
+                }               
+            }catch (SQLException e) {
                 out.println("Erro ao selecionar dados " + e);
             }
         %>
